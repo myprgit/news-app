@@ -24,27 +24,31 @@ Copy .env.example to .env
 ```
 
 
+Install dependencies
+
+```bash
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
 Start Docker
 
 ```bash
   ./vendor/bin/sail up
 ```
 
-Install dependencies
-
-```bash
-  ./vendor/bin/sail composer install
-```
+Import the provided news_app.sql file to a database called 'news_app'
+you may use ```bashlocalhost:8080``` for phpmyadmin
 
 Install node dependencies
-
 ```bash
   ./vendor/bin/sail npm install
 ```
-
 Start the server
-
 ```bash
   ./vendor/bin/sail npm run dev
 ```
-
