@@ -42,7 +42,7 @@ Start Docker
 ```
 
 Import the provided news_app.sql file to a database called 'news_app'
-you may use ```bashlocalhost:8080``` for phpmyadmin
+you may use ```localhost:8080``` for phpmyadmin
 
 Install node dependencies
 ```bash
